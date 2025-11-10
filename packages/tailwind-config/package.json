@@ -1,15 +1,20 @@
 {
   "name": "@repo/tailwind-config",
-  "version": "0.0.0",
-  "type": "module",
-  "private": true,
+  "version": "1.0.0",
+  "main": "./utils.ts",
+  "types": "./utils.ts",
+  "license": "MIT",
   "exports": {
-    ".": "./tailwind.config.ts"
+    ".": "./utils.ts",
+    "./utils": "./utils.ts",
+    "./globals.css": "./globals.css",
+    "./tailwindcss/postcss": "./postcss.config.mjs"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.17",
+    "@tailwindcss/postcss": "^4.1.17"
   },
   "devDependencies": {
-    "@types/node": "^24.10.0",
-    "tailwindcss": "^4.1.17",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.9.3"
+    "typescript": "^5.0.0"
   }
 }
