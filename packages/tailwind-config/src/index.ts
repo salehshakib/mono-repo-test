@@ -1,12 +1,13 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
   content: [
-    "@repo/apps/**/*.{js,ts,jsx,tsx}",
-    "@repo/packages/**/*.{js,ts,jsx,tsx}",
-    "@repo/packages/ui/src/**/*.{js,ts,jsx,tsx}",
-    "@repo/apps/purrfectsoft-admin-panel/src/app/globals.css",
+    "./apps/**/*.{js,ts,jsx,tsx}",
+    "./packages/**/*.{js,ts,jsx,tsx}",
+    // Explicitly include the UI package source so Tailwind's JIT picks up
+    // classes defined inside `packages/ui/src` when running the app.
+    "./packages/ui/src/**/*.{js,ts,jsx,tsx}",
+    "./apps/purrfectsoft-admin-panel/src/app/globals.css",
   ],
   theme: {
     extend: {
@@ -33,7 +34,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 
 export default config;
